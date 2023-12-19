@@ -1,0 +1,25 @@
+FIRST RESULTS (after copy pasting the code)
+D:\!kris\1.FAX\Programiranje\Hw2\src\DN1.java:6:23
+java: ';' expected
+
+Second results after adding ; where needed - RESULTS
+C:\Users\L\.jdks\openjdk-21.0.1\bin\java.exe "-javaagent:C:...
+0
+
+Process finished with exit code 0
+
+EXPLANATION:
+-How the program works
+The for loop adds b + b looped 869 times but the value of b changes for every
+loop and is the new sum of b+b. The result is 85*2^869 which has around 260 digits. 
+
+-Why we got the result 0: There is overflow to the max memory of the integer data type
+(Stores whole numbers from -2,147,483,648 to 2,147,483,647)
+multiple times since the program displays 0. If it was done a few times the 
+program would show a negative number. The same result showed with long.
+
+To get all the digits of the result we need an imported library like 
+java.math.BigInteger. that can handle working with big numbers.
+
+
+
