@@ -1,19 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class GUI_test1 {
+public class GUI_test1 implements ActionListener {
+
+    int count = 0;
+    private JLabel label;
+    private JFrame frame;
+    private JPanel panel;
 
     //is constructer and is treated as a method
     public GUI_test1(){
         //creating the objects
-        JFrame frame= new JFrame();
-        JPanel panel = new JPanel();
-        JButton button= new JButton("Click meeee");
-        JLabel label = new JLabel("Number of clicks 0");
+         frame= new JFrame();
+         panel = new JPanel();
+         JButton button= new JButton("Click meeee");
+        label = new JLabel("Number of clicks 0");
 
         button.setBackground(Color.RED);
         //this means it goes to the class its already in and uses an action listener method
-        button.addActionListener(this);
+        button.addActionListener(this); //this isnt read, must impliment in class
 
         //to use an object
         //top bottom left right dimentions in pixels
@@ -43,5 +50,11 @@ public class GUI_test1 {
     public static void main(String[] args){
         //this is connected to the above class
         new GUI_test1();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        count++;
+        label.setText("Number of clicks "+ count);
     }
 }
